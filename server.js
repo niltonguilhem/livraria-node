@@ -3,13 +3,15 @@ const port = 3000;
 
 const rotas = {
     '/': 'Curso de Node',
-    '/livro': 'Entrei na pag de livros',
-    '/autores': 'Listagem de autores'
+    '/livros': 'Entrei na pag de livros',
+    '/autores': 'Listagem de autores',
+    '/editora': 'Pag de editora',
+    '/sobre': 'Info sobre o projeto'
 }
 
 const server = http.createServer((req, res) => {
     res.writeHead(200, {'Content-Type' : 'text/plain'});
-    res.end('Curso de Node');
+    res.end(rotas[req.url]);
 })
 
 server.listen(port, () => {
